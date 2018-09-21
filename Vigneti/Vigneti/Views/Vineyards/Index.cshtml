@@ -1,0 +1,166 @@
+﻿@model Vigneti.Models.VineyardViewModel.VineyardsIndexData;
+
+
+@{
+    ViewData["Title"] = "Index";
+
+
+}
+<link href="~/css/Style2.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+
+<!-- In base alle azioni dell'utente vengono visualizzate delle tabelle contenti informazioni sul viticoltore
+     oppure sul vino-->
+
+
+
+<table style="margin-top:10%; font-size:24px;" class="table">
+    <thead>
+        <tr>
+            <th>
+                ID Vigneto
+            </th>
+            <th>
+                Dimensione
+            </th>
+            <th>
+                Umidità
+            </th>
+            <th>
+                Vigneto di
+            </th>
+            <th>
+                Tipo di vino
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Vineyards)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VineyardID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dimension)
+                    mq<sup>2</sup>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Humidity)%
+                </td>
+                <td style="color:darkred;">
+
+                    @Html.ActionLink(item.VineGrower.FullName.ToString(), "Index", new { VineGrowerID = item.VineGrowerID })
+                    @*<a asp-controller="Vineyards" asp-action="Index" asp-route-id="VineGrowerID = @item.VineGrowerID" > @Html.DisplayFor(modelItem => item.VineGrower.FullName)</a>*@
+                </td>
+                <td>
+                    @Html.ActionLink(item.Wine.Type.ToString(), "Index", new { WineID = item.WineID })
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<br />
+
+
+@if (Model.Vineyards2 != null)
+{
+    <h2 style="color: #b40000;">Tutti i vigneti di @ViewData["Fullname"]</h2>
+    <table style="margin-top:10%; font-size:24px;" class="table">
+
+        <thead>
+            <tr>
+                <th>
+                    ID Vigneto
+                </th>
+                <th>
+                    Dimensione
+                </th>
+                <th>
+                    Umidità
+                </th>
+                <th>
+                    Tipo di vino
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.Vineyards2)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VineyardID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Dimension)
+                        mq<sup>2</sup>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Humidity)%
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Wine.Type)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+@if (Model.Vineyards3 != null)
+{
+    <h2 style="color: #b40000;">Tutti i vigneti che producono vino @ViewData["Type"].ToString().ToLower()</h2>
+    <table style="margin-top:10%; font-size:24px;" class="table">
+
+        <thead>
+            <tr>
+                <th>
+                    ID Vigneto
+                </th>
+                <th>
+                    Vigneto di
+                </th>
+                <th>
+                    Dimensione
+                </th>
+                <th>
+                    Umidità
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.Vineyards3)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VineyardID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VineGrower.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Dimension)
+                        mq<sup>2</sup>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Humidity)%
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+

@@ -1,0 +1,138 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Vigneti.Models.VineyardViewModel.VineyardsIndexData;
+
+
+
+<link href="~/css/site.css" rel="stylesheet" />
+
+<!--Questa è l'img del vigneto-->
+<div class="hd">
+    <img src="~/images/michelechiarlo-cru-la-court.jpg" class="vigneto" usemap="#ZappaLaVigna" />
+</div>
+
+
+<!--L'img è stata suddivisa grazie ad un software online in aree ben definite rappresentanti i vigneti-->
+
+<map name="ZappaLaVigna">
+
+    <!--Primo vigneto-->
+    <area target="_self" alt="" 
+          title="VIGNETO DI @Model.VineGrowers.Where(v=> v.ID == Model.Vineyards.Where(s => s.VineyardID == 1).Single().VineGrowerID).Single().FullName ,
+          ID VIGNETO : 1,
+          UMIDITA' : @Model.Vineyards.Where(v=>v.VineyardID ==1).Single().Humidity%,
+          DIMENSIONI : @Model.Vineyards.Where(v=>v.VineyardID ==1).Single().Dimension mq "
+          href="~/Vineyards/Index/1" 
+          coords="162,523,46,483,5,463,1,386,61,348,148,308,208,287,276,261,343,235,411,
+          213,449,203,483,225,505,246,531,263,566,288,502,338,375,424,261,487" shape="poly">
+
+
+    <!--Secondo vigneto-->
+    <area target="_self" alt="" 
+          title="VIGNETO DI @Model.VineGrowers.Where(v=> v.ID == Model.Vineyards.Where(s => s.VineyardID == 2).Single().VineGrowerID).Single().FullName ,
+          ID VIGNETO : 2,
+          UMIDITA' : @Model.Vineyards.Where(v=>v.VineyardID ==2).Single().Humidity%,
+          DIMENSIONI : @Model.Vineyards.Where(v=>v.VineyardID ==2).Single().Dimension" 
+          href="~/Vineyards/Index/2"
+          coords="2,657,115,548,127,530,81,507,13,480,1,489" 
+          shape="poly" />
+
+    <!--Terzo vigneto-->
+    <area target="_self" alt="" 
+          title="VIGNETO DI @Model.VineGrowers.Where(v=> v.ID == Model.Vineyards.Where(s => s.VineyardID == 3).Single().VineGrowerID).Single().FullName, 
+          ID VIGNETO : 3,
+          UMIDITA' : @Model.Vineyards.Where(v=>v.VineyardID ==3).Single().Humidity%,
+          DIMENSIONI : @Model.Vineyards.Where(v=>v.VineyardID ==3).Single().Dimension" 
+          href="~/Vineyards/Index/3" 
+          coords="1,735,136,661,261,595,351,552,440,507,535,455,675,379,700,357,688,343,638,
+          324,590,298,558,298,493,338,405,400,322,449,238,493,163,528,118,569,73,610,29,656,2,685" shape="poly">
+
+    <!--Quarto vigneto-->
+    <area target="_self" alt="" 
+          title="VIGNETO DI @Model.VineGrowers.Where(v=> v.ID == Model.Vineyards.Where(s => s.VineyardID == 4).Single().VineGrowerID).Single().FullName,
+          ID VIGNETO : 4,
+          UMIDITA' : @Model.Vineyards.Where(v=>v.VineyardID ==4).Single().Humidity%,
+          DIMENSIONI : @Model.Vineyards.Where(v=>v.VineyardID ==4).Single().Dimension" 
+          href="~/Vineyards/Index/4" 
+          coords="0,741,91,696,187,645,264,604,321,577,402,533,485,495,540,468,585,439,625,
+          410,680,375,725,361,772,363,797,386,804,410,786,434,751,464,704,492,659,523,626,556,611,591,608,632,619,667,636,
+          687,626,714,597,738,573,768,558,790,568,816,591,837,612,853,640,872,666,889,575,898,638,899,574,889,525,893,480,893,422,896,
+          368,896,317,896,238,894,52,899,1,897,1,767,1,750" shape="poly">
+
+    <!--Quinto vigneto-->
+    <area target="_self" alt="" 
+          title="VIGNETO DI @Model.VineGrowers.Where(v=> v.ID == Model.Vineyards.Where(s => s.VineyardID == 5).Single().VineGrowerID).Single().FullName,
+          ID VIGNETO : 5,
+          UMIDITA' : @Model.Vineyards.Where(v=>v.VineyardID ==5).Single().Humidity%,
+          DIMENSIONI : @Model.Vineyards.Where(v=>v.VineyardID ==5).Single().Dimension" 
+          href="~/Vineyards/Index/5" 
+          coords="765,698,746,697,712,692,662,680,635,653,623,617,624,582,638,555,669,527,695,511,729,
+          493,754,473,778,452,802,432,812,404,857,410,927,434,983,451,1057,475,1129,495,1205,519,1281,541,1329,557,1394,
+          567,1455,582,1517,591,1570,596,1558,610,1519,634,1473,656,1414,680,1360,706,1327,733,1319,762,1286,776,1249,795,1205,
+          811,1164,831,1124,845,1099,852,1059,843,994,762,938,712,861,716,833,716" shape="poly">
+
+    <!--Sesto vigneto-->
+    <area target="_self" alt="" 
+          title="VIGNETO DI @Model.VineGrowers.Where(v=> v.ID == Model.Vineyards.Where(s => s.VineyardID == 6).Single().VineGrowerID).Single().FullName,
+          ID VIGNETO : 6,
+          UMIDITA' : @Model.Vineyards.Where(v=>v.VineyardID ==6).Single().Humidity%,
+          DIMENSIONI : @Model.Vineyards.Where(v=>v.VineyardID ==6).Single().Dimension" 
+          href="~/Vineyards/Index/6" 
+          coords="790,365,818,394,863,407,889,414,918,424,952,433,980,444,1010,452,1043,461,1071,469,
+          1105,482,1150,493,1189,507,1230,519,1284,537,1332,548,1379,557,1434,567,1509,584,1549,588,1489,
+          544,1445,503,1407,472,1370,441,1322,406,1273,383,1214,352,1151,365,1092,358,1007,351,842,356,917,359,842,355" shape="poly">
+
+    <!-- Settimo vigneto-->
+    <area target="_self" alt="" 
+          title="VIGNETO DI @Model.VineGrowers.Where(v=> v.ID == Model.Vineyards.Where(s => s.VineyardID == 7).Single().VineGrowerID).Single().FullName,
+          ID VIGNETO : 7,
+          UMIDITA' : @Model.Vineyards.Where(v=>v.VineyardID ==7).Single().Humidity%,
+          DIMENSIONI : @Model.Vineyards.Where(v=>v.VineyardID ==7).Single().Dimension" 
+          href="~/Vineyards/Index/7" 
+          coords="486,195,500,222,519,236,548,263,590,288,649,321,707,336,734,353,777,
+          352,826,349,900,349,959,343,1035,348,1113,352,1167,357,1201,350,953,229,
+          859,196,758,160,662,109,593,133,538,154" shape="poly">
+
+    <!--Ottavo vigneto-->
+    <area target="_self" alt="" 
+          title="VIGNETO DI @Model.VineGrowers.Where(v=> v.ID == Model.Vineyards.Where(s => s.VineyardID == 8).Single().VineGrowerID).Single().FullName,
+          ID VIGNETO : 8, 
+          UMIDITA' : @Model.Vineyards.Where(v=>v.VineyardID ==8).Single().Humidity%,
+          DIMENSIONI : @Model.Vineyards.Where(v=>v.VineyardID ==8).Single().Dimension" 
+          href="~/Vineyards/Index/8" 
+          coords="412,181,399,191,406,203,207,280,187,263,160,266,97,278,40,277,4,261,
+          1,89,37,78,98,69,210,59,307,44,358,102,395,144" shape="poly">
+
+    <!--Nono vigneto-->
+    <area target="_self" alt="" 
+          title="VIGNETO DI @Model.VineGrowers.Where(v=> v.ID == Model.Vineyards.Where(s => s.VineyardID == 9).Single().VineGrowerID).Single().FullName,
+          ID VIGNETO : 9, 
+          UMIDITA' : @Model.Vineyards.Where(v=>v.VineyardID ==9).Single().Humidity%,
+          DIMENSIONI : @Model.Vineyards.Where(v=>v.VineyardID ==9).Single().Dimension" 
+          href="~/Vineyards/Index/9" 
+          coords="413,136,324,42,378,31,446,24,491,20,508,20,521,1,908,3,922,27,938,51,956,
+          79,972,97,982,110,959,134,912,162,873,199,813,177,771,158,730,140,700,122,675,100,
+          654,92,637,100,603,123,543,146,497,113" shape="poly">
+
+    <!--Decimo vigneto-->
+    <area target="_self" alt="" 
+          title="VIGNETO DI @Model.VineGrowers.Where(v=> v.ID == Model.Vineyards.Where(s => s.VineyardID == 10).Single().VineGrowerID).Single().FullName,
+          ID VIGNETO : 10,
+          UMIDITA' : @Model.Vineyards.Where(v=>v.VineyardID ==10).Single().Humidity%,
+          DIMENSIONI : @Model.Vineyards.Where(v=>v.VineyardID ==10).Single().Dimension" 
+          href="~/Vineyards/Index/10" 
+          coords="925,3,1598,1,1599,430,1288,271,1271,263,1196,103,1059,141,1011,113,969,82,941,40" shape="poly">
+
+    <!--Undicesimo vigneto-->
+    <area target="_self" alt="" 
+          title="VIGNETO DI @Model.VineGrowers.Where(v=> v.ID == Model.Vineyards.Where(s => s.VineyardID == 11).Single().VineGrowerID).Single().FullName,
+          ID VIGNETO : 11, 
+          UMIDITA' : @Model.Vineyards.Where(v=>v.VineyardID ==11).Single().Humidity%,
+          DIMENSIONI : @Model.Vineyards.Where(v=>v.VineyardID ==11).Single().Dimension" 
+          href="~/Vineyards/Index/11" 
+          coords="5,369,56,343,124,312,193,285,175,266,110,273,40,283,11,297,1,328" shape="poly">
+
+</map>
+
